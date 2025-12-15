@@ -16,6 +16,6 @@ contract Factory {
     function executeTrade(address tokenA, uint256 amount) public {
         address _pairInterface = tokenAddresses[tokenA];
         IExchangePair pairInterface = IExchangePair(_pairInterface);
-        pairInterface.exchange(tokenA, amount);
+        pairInterface.exchange(msg.sender, amount);
     }
 }
